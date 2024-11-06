@@ -16,6 +16,7 @@ void main() {
 
     setUp(() {
       mockClient = MockClient();
+      // Passa o mockClient para o StudyService
       studyService = StudyService();
     });
 
@@ -35,11 +36,14 @@ void main() {
         },
       ]);
 
+      // Configura o mockClient para retornar a resposta simulada
       when(mockClient.get(Uri.parse('http://localhost:3000/studies')))
           .thenAnswer((_) async => http.Response(mockResponse, 200));
 
+      // Executa o método fetchStudies e verifica o resultado
       final studies = await studyService.fetchStudies();
 
+      // Verifica o conteúdo dos estudos retornados
       expect(studies.length, 2);
       expect(studies[0].titulo, 'Matemática Básica');
       expect(studies[1].titulo, 'Física');
@@ -48,9 +52,11 @@ void main() {
     });
 
     test('Deve lançar uma exceção se o código de status não for 200', () async {
+      // Configura o mockClient para simular um erro 404
       when(mockClient.get(Uri.parse('http://localhost:3000/studies')))
           .thenAnswer((_) async => http.Response('Not Found', 404));
 
+      // Verifica se uma exceção é lançada
       expect(() async => await studyService.fetchStudies(), throwsException);
     });
   });
