@@ -1,0 +1,52 @@
+{
+  "studies": [
+    {
+      "id": "1",
+      "titulo": "Matemática Básica",
+      "descricao": "Estudo sobre cálculo e álgebra linear",
+      "subject": {
+        "name": "Matemática"
+      }
+    },
+    {
+      "id": "2",
+      "titulo": "História Moderna",
+      "descricao": "Estudo sobre os principais eventos da era moderna",
+      "subject": {
+        "name": "História"
+      }
+    },
+    {
+      "id": null,
+      "titulo": "12",
+      "descricao": "sd",
+      "subject": {
+        "name": "231sda"
+      }
+    },
+    {
+      "id": null,
+      "titulo": "test",
+      "descricao": "test",
+      "subject": {
+        "name": "test"
+      }
+    },
+    {
+      "id": null,
+      "titulo": "test2",
+      "descricao": "test2",
+      "subject": {
+        "name": "test2"
+      }
+    },
+    {
+      "id": null,
+      "titulo": "assd",
+      "descricao": "asasasdasdasdasdasdasd",
+      "subject": {
+        "name": "as"
+      }
+    }
+  ]
+}
